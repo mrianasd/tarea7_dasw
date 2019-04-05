@@ -1,0 +1,23 @@
+<!-- TODO: solo se muestra si es modo productos -->
+<!-- TODO: no mostrar boton borrar si es modo productos-->
+<div>
+    <h2 *ngIf="!carrito">Lista de productos</h2>
+    <h2 *ngIf="carrito">Carrito de compras</h2>
+</div>
+<button 
+   type="button" 
+   id="btAdd" 
+   class="btn btn-success btn-lg mt-2" 
+   data-toggle="modal" 
+   data-target="#modelId"
+   (click) = "add()">
+  Añadir al carrito
+  </button>
+
+<div>
+ <app-producto-item
+  *ngFor="let p of productos"
+  [producto] = "p"
+  >
+  </app-producto-item>
+</div>
